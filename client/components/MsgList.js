@@ -1,8 +1,9 @@
-import React from "react";
-import MsgItem from "./MsgItem";
+import React from 'react';
+import MsgItem from './MsgItem';
+import MsgInput from './MsgInput';
 
 const MsgList = () => {
-  const UserIds = ["roy", "roy"];
+  const UserIds = ['roy', 'roy'];
   const getRandomUserId = () => UserIds[Math.round(Math.random())];
   const msg = Array(50)
     .fill(0)
@@ -14,11 +15,14 @@ const MsgList = () => {
     }));
 
   return (
-    <ul className='messages'>
-      {msg?.map((ele) => (
-        <MsgItem key={ele.id} {...ele} />
-      ))}
-    </ul>
+    <>
+      <MsgInput />
+      <ul className='messages'>
+        {msg?.map((ele) => (
+          <MsgItem key={ele.id} {...ele} />
+        ))}
+      </ul>
+    </>
   );
 };
 
